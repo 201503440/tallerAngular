@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "tallerAngular"
+    }
+  },
+  "defaultProject": "tallerAngular",
+  "cli": {
+    "analytics": "900acaa2-3ac1-4e0a-a9f2-b2e1ba2de266"
+  }
 }
