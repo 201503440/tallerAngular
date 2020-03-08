@@ -1,8 +1,8 @@
 export interface Employee
 {
-    cod_empleado?: number;
+    cod_empleado?: string;
     nombre?: string;
     apellido?: string;
-    telefono?: number;
+    telefono?: string;
     correo?: string
 }

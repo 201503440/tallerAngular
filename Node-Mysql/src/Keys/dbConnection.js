@@ -4,7 +4,8 @@ module.exports = () => {
     return mysql.createConnection({
         host: 'localhost',
         user: 'root',
-        password: 'password',
-        database: 'Taller'
+        password: 'Pablo#123',
+        database: 'Taller',
+        insecureAuth : true
     });
 }

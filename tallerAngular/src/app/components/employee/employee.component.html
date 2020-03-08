@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+        <div class="col s5">
+            <div class="card">
+                <div class="card-content">
+                    <form #employeeForm="ngForm" (ngSubmit)="addEmployee(employeeForm)">
+                        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)] = "employeeService.selectedEmployee.cod_empleado"> <!--id oculto-->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="text" name="cod_empleado" #cod_empleado="ngModel"   [(ngModel)] = "employeeService.selectedEmployee.cod_empleado" placeholder="Ingresa codigo personal">
+                                
+                                <input type="text" name="nombre" #nombre="ngModel"  [(ngModel)] = "employeeService.selectedEmployee.nombre" placeholder="Ingresa tus nombres">
+
+                                    
+                                <input type="text" name="apellido" #apellido="ngModel"  [(ngModel)] = "employeeService.selectedEmployee.apellido" placeholder="INgresa tus apellidos">
+
+                                
+                                <input type="text" name="telefono" #telefono="ngModel"  [(ngModel)] = "employeeService.selectedEmployee.telefono" placeholder="Ingresa tu telefono">
+                                 
+                                <input type="text" name="correo" #correo="ngModel"  [(ngModel)] = "employeeService.selectedEmployee.correo" placeholder="Ingresa tu Correo">
+
+                                <div class ="card-action">
+                                    <div class="input-field col s12">                                       
+                                        <button class="btn right" style="margin-left: 2px"> Guardar</button>
+                                        <button class="btn right" (click) = "resetForm(employeeForm)"> Limpiar</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col s7">
+            <table>
+                <thead>
+                    <th>Codigo</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Telefono</th>
+                    <th>Email</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let employee of employees">
+                        <td>{{employee.cod_empleado}}</td>
+                        <td>{{employee.nombre}}</td>
+                        <td>{{employee.apellido}}</td>
+                        <td>{{employee.telefono}}</td>
+                        <td>{{employee.correo}}</td>
+                        <td>
+                            <a (click) = "editEmployee(employee)" >
+                                <i class ="material-icons">edit</i>
+                            </a>
+                            <a (click) = "deleteEmployee(employee.cod_empleado)" >
+                                <i class ="material-icons">delete</i>
+                            </a>
+                        </td>   
+                    </tr>
+              </tbody>
+            </table>
+        </div>
+    </div>
+</div>
